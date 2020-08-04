@@ -6,7 +6,7 @@ class Counter extends React.Component {
     // state = { count: 0 }; // remove this
 
     increment = (props) => {
-        this.props.dispatch(increment())
+        this.props.increment()
     };
 
     decrement = () => {
@@ -16,11 +16,11 @@ class Counter extends React.Component {
           count: this.state.count - 1
         });
         */
-        this.props.dispatch(decrement())
+        this.props.decrement()
     };
 
     reset = () => {
-        this.props.dispatch(reset())
+        this.props.reset()
     }
 
     render() {
@@ -47,6 +47,13 @@ function mapStateToProps(state) {
     return {
         count: state.count
     };
+}
+
+const mapsDispatchToProps = {
+    increment,
+    decrement,
+    reset
+
 }
 
 
